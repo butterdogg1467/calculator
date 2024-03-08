@@ -8,6 +8,7 @@ let divideBtn = document.querySelector('#divide')
 let cBtn = document.querySelector('#C')
 let ceBtn = document.querySelector('#CE')
 let negativeBtn = document.querySelector('#negativebutton')
+let decimal = document.querySelector('#decimal')
 let zeroBtn = document.querySelector('#btnzero')
 let oneBtn = document.querySelector('#btnone')
 let twoBtn = document.querySelector('#btntwo')
@@ -28,10 +29,36 @@ let num1 = 0;
 let num2 = 0;
 let cBtnClicked = 'false'
 let sum = 0
+let addBtnClicked;
+let subtractBtnClicked;
+let multiplyBtnClicked;
+let divideBtnClicked; 
 
-outputBox.textContent += 0 
+outputBox.textContent += 0
+
+ceBtn.addEventListener('click', function () {
+    num2 = 0;
+    functionValueContainer.textContent = '';
+})
 
 cBtn.addEventListener('click', function () {
+    outputBox.textContent = 0
+    outputBox.value = 0
+    num1 = 0
+    num2 = 0
+    sum = 0
+    functionValue = ''
+    cBtnClicked.value = 'true'
+    problemDisplay.textContent = ''
+    problemDisplayValue.textContent = ''
+    functionValueContainer.textContent = ''
+    addBtn.style.backgroundColor = 'gray'
+    subtractBtn.style.backgroundColor = 'gray'
+    multiplyBtn.style.backgroundColor = 'gray'
+    divideBtn.style.backgroundColor = 'gray'
+})
+
+window.addEventListener('beforeunload', function() {
     outputBox.textContent = 0
     outputBox.value = 0
     num1 = 0
@@ -275,6 +302,14 @@ nineBtn.addEventListener('click', function () {
 
 
 addBtn.addEventListener('click', function () {
+    addBtnClicked = 'true'
+    
+    if (addBtnClicked === 'true') {
+        subtractBtn.style.backgroundColor = 'gray'
+        multiplyBtn.style.backgroundColor = 'gray'
+        divideBtn.style.backgroundColor = 'gray'
+        addBtn.style.backgroundColor = 'lightgray'
+    }
     if (functionValueContainer.textContent != 0) {
         functionValue = ' + '
         functionValueContainer.textContent += functionValue
@@ -284,10 +319,18 @@ addBtn.addEventListener('click', function () {
         functionValue = ''
         functionValueContainer.textContent = functionValue
         outputBox.value +=functionValue
-    }
+    } 
 })
 
 subtractBtn.addEventListener('click', function () {
+    subtractBtnClicked = 'true'
+    
+    if (subtractBtnClicked === 'true') {
+        addBtn.style.backgroundColor = 'gray'
+        multiplyBtn.style.backgroundColor = 'gray'
+        divideBtn.style.backgroundColor = 'gray'
+        subtractBtn.style.backgroundColor = 'lightgray'
+    }
     if (functionValueContainer.textContent != 0) {
         functionValue = ' - '
         functionValueContainer.textContent += functionValue
@@ -301,6 +344,13 @@ subtractBtn.addEventListener('click', function () {
 })
 
 multiplyBtn.addEventListener('click', function () {
+    multiplyBtnClicked = 'true'
+    if (multiplyBtnClicked === 'true') {
+        addBtn.style.backgroundColor = 'gray'
+        subtractBtn.style.backgroundColor = 'gray'
+        divideBtn.style.backgroundColor = 'gray'
+        multiplyBtn.style.backgroundColor = 'lightgray'
+    }
     if (functionValueContainer.textContent != 0) {
         functionValue = ' × '
         functionValueContainer.textContent +=functionValue
@@ -315,6 +365,13 @@ multiplyBtn.addEventListener('click', function () {
 })
 
 divideBtn.addEventListener('click', function () {
+    divideBtnClicked = 'true'
+    if (divideBtnClicked === 'true') {
+        addBtn.style.backgroundColor = 'gray'
+        subtractBtn.style.backgroundColor = 'gray'
+        multiplyBtn.style.backgroundColor = 'gray'
+        divideBtn.style.backgroundColor = 'lightgray'
+    }
     if (functionValueContainer.textContent != 0) {
         functionValue = ' ÷ '
         functionValueContainer.textContent += functionValue
@@ -328,8 +385,13 @@ divideBtn.addEventListener('click', function () {
 })
 
 
+
 equalsBtn.addEventListener('click', function operate() {
     problemDisplay.textContent = problemDisplayValue.textContent + '='
+    addBtn.style.backgroundColor = 'gray'
+    subtractBtn.style.backgroundColor = 'gray'
+    multiplyBtn.style.backgroundColor = 'gray'
+    divideBtn.style.backgroundColor = 'gray'
     
     if (functionValue === ' + ') {
         let strProb = functionValueContainer.textContent
@@ -342,6 +404,9 @@ equalsBtn.addEventListener('click', function operate() {
             if (cBtnClicked === 'false') {
                 num1 = sum
             } 
+            if (sum % 1 !== 0) {
+                sum = sum.toFixed(1)
+            }
     } else if (functionValue === ' - ') {
     let strProb = functionValueContainer.textContent
     let splitProb = strProb.split('-')
@@ -353,6 +418,9 @@ equalsBtn.addEventListener('click', function operate() {
         if (cBtnClicked === 'false') {
             num1 = sum
         } 
+        if (sum % 1 !== 0) {
+            sum = sum.toFixed(1)
+        }
     } else if (functionValue === ' × ') {
     let strProb = functionValueContainer.textContent
     let splitProb = strProb.split('×')
@@ -364,28 +432,25 @@ equalsBtn.addEventListener('click', function operate() {
         if (cBtnClicked === 'false') {
             num1 = sum
         } 
+        if (sum % 1 !== 0) {
+            sum = sum.toFixed(1)
+        }
     } else if (functionValue === ' ÷ ') {
     let strProb = functionValueContainer.textContent
     let splitProb = strProb.split('÷')
     sum = 0
     let numberz = splitProb.map((num => Number(num)))
     sum = numberz.reduce((accumulator, currentValue) => accumulator / currentValue)
+    if (sum % 1 !== 0) {
+        sum = sum.toFixed(1)
+    }
     outputBox.textContent = sum
     functionValueContainer.textContent = sum
         if (cBtnClicked === 'false') {
             num1 = sum
         } 
+        
     }
-})
-
-window.addEventListener('beforeunload', function() {
-    outputBox.textContent = 0
-    outputBox.value = 0
-    num1 = 0
-    num2 = 0
-    sum = 0
-    functionValue = ''
-    cBtnClicked.value = 'false'
 })
 
 

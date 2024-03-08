@@ -13,7 +13,7 @@ body {
     text-align: start;
     padding-left: 15px;
     font-size: 70px;
-    height: 45px;
+    height: 70px;
     border-top: darkgray solid;
     border-top-width: 25px;
     border-left: darkgray solid;
@@ -76,7 +76,8 @@ body {
 .numberbutton,
 .functionbutton,
 .clearbutton,
-#negativebutton {
+#negativebutton,
+#decimal {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -87,13 +88,14 @@ body {
     height: 100px;
 }
 
+
 .button {
     border-radius: 25px;
     border: solid black;
     background-color: gray ;
 }
 
-button:hover {
+.button:hover {
     background-color:lightgray;
 }
 
