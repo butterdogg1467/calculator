@@ -235,7 +235,7 @@ nineBtn.addEventListener('click', function () {
 
 
 addBtn.addEventListener('click', function () {
-    if (outputBox.textContent > 0) {
+    if (outputBox.textContent != 0) {
         functionValue = ' + '
         outputBox.textContent += functionValue
         outputBox.value +=functionValue
@@ -247,7 +247,7 @@ addBtn.addEventListener('click', function () {
 })
 
 subtractBtn.addEventListener('click', function () {
-    if (outputBox.textContent > 0) {
+    if (outputBox.textContent != 0) {
         functionValue = ' - '
         outputBox.textContent += functionValue
         outputBox.value +=functionValue
@@ -259,7 +259,7 @@ subtractBtn.addEventListener('click', function () {
 })
 
 multiplyBtn.addEventListener('click', function () {
-    if (outputBox.textContent > 0) {
+    if (outputBox.textContent != 0) {
         functionValue = ' × '
         outputBox.textContent +=functionValue
         outputBox.value +=functionValue
@@ -272,7 +272,7 @@ multiplyBtn.addEventListener('click', function () {
 })
 
 divideBtn.addEventListener('click', function () {
-    if (outputBox.textContent > 0) {
+    if (outputBox.textContent != 0) {
         functionValue = ' ÷ '
         outputBox.textContent += functionValue
         outputBox.value +=functionValue
@@ -285,9 +285,9 @@ divideBtn.addEventListener('click', function () {
 
 
 equalsBtn.addEventListener('click', function operate() {
-    let strProb = outputBox.textContent
-    let splitProb = strProb.split('+')
     if (functionValue === ' + ') {
+        let strProb = outputBox.textContent
+        let splitProb = strProb.split('+')
         sum = 0
         let numberz = splitProb.map((num => Number(num)))
         sum = numberz.reduce((accumulator, currentValue) => accumulator + currentValue)
@@ -296,6 +296,8 @@ equalsBtn.addEventListener('click', function operate() {
                 num1 = sum
             } 
     } else if (functionValue === ' - ') {
+    let strProb = outputBox.textContent
+    let splitProb = strProb.split('-')
     sum = 0
     let numberz = splitProb.map((num => Number(num)))
     sum = numberz.reduce((accumulator, currentValue) => accumulator - currentValue)
@@ -304,19 +306,21 @@ equalsBtn.addEventListener('click', function operate() {
             num1 = sum
         } 
     } else if (functionValue === ' × ') {
+    let strProb = outputBox.textContent
+    let splitProb = strProb.split('×')
     sum = 0
-    let number1 = Number(num1)
-    let number2 = Number(num2)
-    sum = number1 * number2
+    let numberz = splitProb.map((num => Number(num)))
+    sum = numberz.reduce((accumulator, currentValue) => accumulator * currentValue)
     outputBox.textContent = sum
         if (cBtnClicked === 'false') {
             num1 = sum
         } 
     } else if (functionValue === ' ÷ ') {
+    let strProb = outputBox.textContent
+    let splitProb = strProb.split('÷')
     sum = 0
-    let number1 = Number(num1)
-    let number2 = Number(num2)
-    sum = number1 / number2
+    let numberz = splitProb.map((num => Number(num)))
+    sum = numberz.reduce((accumulator, currentValue) => accumulator / currentValue)
     outputBox.textContent = sum
         if (cBtnClicked === 'false') {
             num1 = sum
