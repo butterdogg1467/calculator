@@ -28,6 +28,7 @@ let functionValue;
 let num1 = 0;
 let num2 = 0;
 let cBtnClicked = 'false'
+let sum = 0
 
 outputBox.textContent += 0 
 
@@ -235,7 +236,7 @@ nineBtn.addEventListener('click', function () {
 
 addBtn.addEventListener('click', function () {
     if (outputBox.textContent > 0) {
-        functionValue = '+'
+        functionValue = ' + '
         outputBox.textContent += functionValue
         outputBox.value +=functionValue
     } else if (outputBox.textContent === '' || outputBox.textContent === undefined ||outputBox.textContent === null) {
@@ -247,7 +248,7 @@ addBtn.addEventListener('click', function () {
 
 subtractBtn.addEventListener('click', function () {
     if (outputBox.textContent > 0) {
-        functionValue = '-'
+        functionValue = ' - '
         outputBox.textContent += functionValue
         outputBox.value +=functionValue
     } else if (outputBox.textContent === '' || outputBox.textContent === undefined ||outputBox.textContent === null) {
@@ -259,7 +260,7 @@ subtractBtn.addEventListener('click', function () {
 
 multiplyBtn.addEventListener('click', function () {
     if (outputBox.textContent > 0) {
-        functionValue = '×'
+        functionValue = ' × '
         outputBox.textContent +=functionValue
         outputBox.value +=functionValue
     } else if (outputBox.textContent === '' || outputBox.textContent === undefined ||outputBox.textContent === null) {
@@ -272,7 +273,7 @@ multiplyBtn.addEventListener('click', function () {
 
 divideBtn.addEventListener('click', function () {
     if (outputBox.textContent > 0) {
-        functionValue = '÷'
+        functionValue = ' ÷ '
         outputBox.textContent += functionValue
         outputBox.value +=functionValue
     } else if (outputBox.textContent === '' || outputBox.textContent === undefined ||outputBox.textContent === null) {
@@ -284,26 +285,25 @@ divideBtn.addEventListener('click', function () {
 
 
 equalsBtn.addEventListener('click', function operate() {
-    if (functionValue === '+') {
+    let strProb = outputBox.textContent
+    let splitProb = strProb.split('+')
+    if (functionValue === ' + ') {
         sum = 0
-        let number1 = Number(num1)
-        let number2 = Number(num2)
-        sum = number1 + number2
+        let numberz = splitProb.map((num => Number(num)))
+        sum = numberz.reduce((accumulator, currentValue) => accumulator + currentValue)
         outputBox.textContent = sum
             if (cBtnClicked === 'false') {
                 num1 = sum
             } 
-        
-    } else if (functionValue === '-') {
+    } else if (functionValue === ' - ') {
     sum = 0
-    let number1 = Number(num1)
-    let number2 = Number(num2)
-    sum = number1 - number2
+    let numberz = splitProb.map((num => Number(num)))
+    sum = numberz.reduce((accumulator, currentValue) => accumulator - currentValue)
     outputBox.textContent = sum
         if (cBtnClicked === 'false') {
             num1 = sum
         } 
-    } else if (functionValue === '×') {
+    } else if (functionValue === ' × ') {
     sum = 0
     let number1 = Number(num1)
     let number2 = Number(num2)
@@ -312,7 +312,7 @@ equalsBtn.addEventListener('click', function operate() {
         if (cBtnClicked === 'false') {
             num1 = sum
         } 
-    } else if (functionValue === '÷') {
+    } else if (functionValue === ' ÷ ') {
     sum = 0
     let number1 = Number(num1)
     let number2 = Number(num2)
@@ -324,7 +324,15 @@ equalsBtn.addEventListener('click', function operate() {
     }
 })
 
-
+window.addEventListener('beforeunload', function() {
+    outputBox.textContent = 0
+    outputBox.value = 0
+    num1 = 0
+    num2 = 0
+    sum = 0
+    functionValue = ''
+    cBtnClicked.value = 'false'
+})
 
 
 
