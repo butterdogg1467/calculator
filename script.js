@@ -27,6 +27,7 @@ let divideFunctionValue = divideBtn.value
 let functionValue;
 let num1 = 0;
 let num2 = 0;
+let cBtnClicked = 'false'
 
 outputBox.textContent += 0 
 
@@ -37,6 +38,7 @@ cBtn.addEventListener('click', function () {
     num2 = 0
     sum = 0
     functionValue = ''
+    cBtnClicked.value = 'true'
 })
 
 
@@ -61,6 +63,12 @@ oneBtn.addEventListener('click', function () {
     } else {
         num1 = 1
     }
+
+    if (num1 != 0 && functionValue === '') {
+        num1 += 1
+    } else if (num2 != 0 && functionValue != '') {
+        num2 += 1
+    }
     
 }) 
 
@@ -77,6 +85,11 @@ twoBtn.addEventListener('click', function () {
         num1 = 2
     }
     
+    if (num1 != 0 && functionValue === '') {
+        num1 += 2
+    } else if (num2 != 0 && functionValue != '') {
+        num2 += 2
+    }
 }) 
 
 threeBtn.addEventListener('click', function () {
@@ -92,6 +105,11 @@ threeBtn.addEventListener('click', function () {
         num1 = 3
     }
     
+    if (num1 != 0 && functionValue === '') {
+        num1 += 3
+    } else if (num2 != 0 && functionValue != '') {
+        num2 += 3
+    }
 }) 
 
 fourBtn.addEventListener('click', function () {
@@ -107,6 +125,11 @@ fourBtn.addEventListener('click', function () {
         num1 = 4
     }
     
+    if (num1 != 0 && functionValue === '') {
+        num1 += 4
+    } else if (num2 != 0 && functionValue != '') {
+        num2 += 4
+    }
 }) 
 
 fiveBtn.addEventListener('click', function () {
@@ -122,6 +145,11 @@ fiveBtn.addEventListener('click', function () {
         num1 = 5
     }
     
+    if (num1 != 0 && functionValue === '') {
+        num1 += 5
+    } else if (num2 != 0 && functionValue != '') {
+        num2 += 5
+    }
 }) 
 
 sixBtn.addEventListener('click', function () {
@@ -137,6 +165,11 @@ sixBtn.addEventListener('click', function () {
         num1 = 6
     }
     
+    if (num1 != 0 && functionValue === '') {
+        num1 += 6
+    } else if (num2 != 0 && functionValue != '') {
+        num2 += 6
+    }
 }) 
 
 sevenBtn.addEventListener('click', function () {
@@ -152,6 +185,11 @@ sevenBtn.addEventListener('click', function () {
         num1 = 7
     }
     
+    if (num1 != 0 && functionValue === '') {
+        num1 += 7
+    } else if (num2 != 0 && functionValue != '') {
+        num2 += 7
+    }
 }) 
 
 eightBtn.addEventListener('click', function () {
@@ -167,6 +205,11 @@ eightBtn.addEventListener('click', function () {
         num1 = 8
     }
     
+    if (num1 != 0 && functionValue === '') {
+        num1 += 8
+    } else if (num2 != 0 && functionValue != '') {
+        num2 += 8
+    }
 }) 
 
 nineBtn.addEventListener('click', function () {
@@ -182,6 +225,11 @@ nineBtn.addEventListener('click', function () {
         num1 = 9
     }
     
+    if (num1 != 0 && functionValue === '') {
+        num1 += 9
+    } else if (num2 != 0 && functionValue != '') {
+        num2 += 9
+    }
 }) 
 
 
@@ -236,12 +284,44 @@ divideBtn.addEventListener('click', function () {
 
 
 equalsBtn.addEventListener('click', function operate() {
+    if (functionValue === '+') {
+        sum = 0
+        let number1 = Number(num1)
+        let number2 = Number(num2)
+        sum = number1 + number2
+        outputBox.textContent = sum
+            if (cBtnClicked === 'false') {
+                num1 = sum
+            } 
+        
+    } else if (functionValue === '-') {
     sum = 0
     let number1 = Number(num1)
     let number2 = Number(num2)
     sum = number1 - number2
     outputBox.textContent = sum
-    alert(typeof sum)
+        if (cBtnClicked === 'false') {
+            num1 = sum
+        } 
+    } else if (functionValue === '×') {
+    sum = 0
+    let number1 = Number(num1)
+    let number2 = Number(num2)
+    sum = number1 * number2
+    outputBox.textContent = sum
+        if (cBtnClicked === 'false') {
+            num1 = sum
+        } 
+    } else if (functionValue === '÷') {
+    sum = 0
+    let number1 = Number(num1)
+    let number2 = Number(num2)
+    sum = number1 / number2
+    outputBox.textContent = sum
+        if (cBtnClicked === 'false') {
+            num1 = sum
+        } 
+    }
 })
 
 
