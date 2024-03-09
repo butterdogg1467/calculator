@@ -303,14 +303,24 @@ eightBtn.addEventListener('click', function () {
     }
 }) 
 nineBtn.addEventListener('click', function () {
-    if (outputBox.textContent != 0 || functionValue === '') {
+    if (outputBox.textContent === 0) {
+        outputBox.textContent = 9
+        problemDisplayValue.textContent += 9
+        expressionContainer.textContent += 9
+    } else if (outputBox.textContent != 0) {
         outputBox.textContent += 9
         problemDisplayValue.textContent += 9
         expressionContainer.textContent += 9
-    } else if (outputBox.textContent != 0 || functionValue === ' + '){
+    } else if (functionValue === ''){
+        outputBox.textContent += 9
+        problemDisplayValue.textContent += 9
+        expressionContainer.textContent += 9
+    } else if (functionValue === ' + ') {
         outputBox.textContent = 9
-        problemDisplayValue.textContent = 9
-        expressionContainer.textContent = 9
+        problemDisplayValue.textContent += 9
+        expressionContainer.textContent += 9
+    } else {
+        outputBox.textContent = 9
     }
 
 
