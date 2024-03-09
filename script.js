@@ -41,7 +41,7 @@ generalButton.forEach(button => {
     })
 })
 
-outputBox.textContent += 0
+outputBox.textContent = 0
 
 ceBtn.addEventListener('click', function () {
     expressionContainer.textContent = 0
@@ -56,7 +56,7 @@ cBtn.addEventListener('click', function () {
     num2 = 0
     sum = 0
     functionValue = ''
-    cBtnClicked.value = 'true'
+    cBtnClicked= 'true'
     problemDisplay.textContent = ''
     problemDisplayValue.textContent = ''
     expressionContainer.textContent = ''
@@ -96,6 +96,11 @@ zeroBtn.addEventListener('click', function () {
 
 
 oneBtn.addEventListener('click', function () {
+    addBtn.style.backgroundColor = ''
+    subtractBtn.style.backgroundColor = ''
+    multiplyBtn.style.backgroundColor = ''
+    divideBtn.style.backgroundColor = ''
+
     if (outputBox.textContent != 0 ) {
         outputBox.textContent += 1
         problemDisplayValue.textContent += 1
@@ -108,21 +113,16 @@ oneBtn.addEventListener('click', function () {
 
     
 
-    if (num1 != 0) {
-        num2 = 1
-    } else {
-        num1 = 1
-    }
-
-    if (num1 != 0 && functionValue === '') {
-        num1 += 1
-    } else if (num2 != 0 && functionValue != '') {
-        num2 += 1
-    }
+    
     
 }) 
 
 twoBtn.addEventListener('click', function () {
+    addBtn.style.backgroundColor = ''
+    subtractBtn.style.backgroundColor = ''
+    multiplyBtn.style.backgroundColor = ''
+    divideBtn.style.backgroundColor = ''
+
     if (outputBox.textContent != 0) {
         outputBox.textContent += 2
         problemDisplayValue.textContent += 2
@@ -134,20 +134,15 @@ twoBtn.addEventListener('click', function () {
     }
     
     
-    if (num1 != 0) {
-        num2 = 2
-    } else {
-        num1 = 2
-    }
     
-    if (num1 != 0 && functionValue === '') {
-        num1 += 2
-    } else if (num2 != 0 && functionValue != '') {
-        num2 += 2
-    }
 }) 
 
 threeBtn.addEventListener('click', function () {
+    addBtn.style.backgroundColor = ''
+    subtractBtn.style.backgroundColor = ''
+    multiplyBtn.style.backgroundColor = ''
+    divideBtn.style.backgroundColor = ''
+
     if (outputBox.textContent != 0) {
         outputBox.textContent += 3
         problemDisplayValue.textContent += 3
@@ -160,20 +155,15 @@ threeBtn.addEventListener('click', function () {
 
     
 
-    if (num1 != 0) {
-        num2 = 3
-    } else {
-        num1 = 3
-    }
-    
-    if (num1 != 0 && functionValue === '') {
-        num1 += 3
-    } else if (num2 != 0 && functionValue != '') {
-        num2 += 3
-    }
+   
 }) 
 
 fourBtn.addEventListener('click', function () {
+    addBtn.style.backgroundColor = ''
+    subtractBtn.style.backgroundColor = ''
+    multiplyBtn.style.backgroundColor = ''
+    divideBtn.style.backgroundColor = ''
+
     if (outputBox.textContent != 0) {
         outputBox.textContent += 4
         problemDisplayValue.textContent += 4
@@ -186,20 +176,15 @@ fourBtn.addEventListener('click', function () {
 
     
 
-    if (num1 != 0) {
-        num2 = 4
-    } else {
-        num1 = 4
-    }
     
-    if (num1 != 0 && functionValue === '') {
-        num1 += 4
-    } else if (num2 != 0 && functionValue != '') {
-        num2 += 4
-    }
 }) 
 
 fiveBtn.addEventListener('click', function () {
+    addBtn.style.backgroundColor = ''
+    subtractBtn.style.backgroundColor = ''
+    multiplyBtn.style.backgroundColor = ''
+    divideBtn.style.backgroundColor = ''
+
     if (outputBox.textContent != 0) {
         outputBox.textContent += 5
         problemDisplayValue.textContent += 5
@@ -212,20 +197,15 @@ fiveBtn.addEventListener('click', function () {
 
     
 
-    if (num1 != 0) {
-        num2 = 5
-    } else {
-        num1 = 5
-    }
     
-    if (num1 != 0 && functionValue === '') {
-        num1 += 5
-    } else if (num2 != 0 && functionValue != '') {
-        num2 += 5
-    }
 }) 
 
 sixBtn.addEventListener('click', function () {
+    addBtn.style.backgroundColor = ''
+    subtractBtn.style.backgroundColor = ''
+    multiplyBtn.style.backgroundColor = ''
+    divideBtn.style.backgroundColor = ''
+
     if (outputBox.textContent != 0) {
         outputBox.textContent += 6
         problemDisplayValue.textContent += 6
@@ -238,20 +218,15 @@ sixBtn.addEventListener('click', function () {
 
     
 
-    if (num1 != 0) {
-        num2 = 6
-    } else {
-        num1 = 6
-    }
     
-    if (num1 != 0 && functionValue === '') {
-        num1 += 6
-    } else if (num2 != 0 && functionValue != '') {
-        num2 += 6
-    }
 }) 
 
 sevenBtn.addEventListener('click', function () {
+    addBtn.style.backgroundColor = ''
+    subtractBtn.style.backgroundColor = ''
+    multiplyBtn.style.backgroundColor = ''
+    divideBtn.style.backgroundColor = ''
+
     if (outputBox.textContent != 0) {
         outputBox.textContent += 7
         problemDisplayValue.textContent += 7
@@ -264,20 +239,15 @@ sevenBtn.addEventListener('click', function () {
 
     
 
-    if (num1 != 0) {
-        num2 = 7
-    } else {
-        num1 = 7
-    }
     
-    if (num1 != 0 && functionValue === '') {
-        num1 += 7
-    } else if (num2 != 0 && functionValue != '') {
-        num2 += 7
-    }
 }) 
 
 eightBtn.addEventListener('click', function () {
+    addBtn.style.backgroundColor = ''
+    subtractBtn.style.backgroundColor = ''
+    multiplyBtn.style.backgroundColor = ''
+    divideBtn.style.backgroundColor = ''
+
     if (outputBox.textContent != 0) {
         outputBox.textContent += 8
         problemDisplayValue.textContent += 8
@@ -290,51 +260,43 @@ eightBtn.addEventListener('click', function () {
 
     
 
-    if (num1 != 0) {
-        num2 = 8
-    } else {
-        num1 = 8
-    }
     
-    if (num1 != 0 && functionValue === '') {
-        num1 += 8
-    } else if (num2 != 0 && functionValue != '') {
-        num2 += 8
-    }
 }) 
+
 nineBtn.addEventListener('click', function () {
-    if (outputBox.textContent === 0) {
+    addBtn.style.backgroundColor = ''
+    subtractBtn.style.backgroundColor = ''
+    multiplyBtn.style.backgroundColor = ''
+    divideBtn.style.backgroundColor = ''
+
+    if (outputBox.textContent == '0') {
         outputBox.textContent = 9
-        problemDisplayValue.textContent += 9
-        expressionContainer.textContent += 9
-    } else if (outputBox.textContent != 0) {
+        problemDisplayValue.textContent = 9
+        expressionContainer.textContent = 9
+
+    } else {
         outputBox.textContent += 9
         problemDisplayValue.textContent += 9
         expressionContainer.textContent += 9
-    } else if (functionValue === ''){
-        outputBox.textContent += 9
-        problemDisplayValue.textContent += 9
-        expressionContainer.textContent += 9
-    } else if (functionValue === ' + ') {
-        outputBox.textContent = 9
-        problemDisplayValue.textContent += 9
-        expressionContainer.textContent += 9
-    } else {
-        outputBox.textContent = 9
     }
 
+    if (functionValue === ' + '){
+        if (outputBox.textContent != 0) {
+            outputBox.textContent = 9
+            nineBtn.addEventListener('click', function () {
+                outputBox.textContent += 9
+                
+            })
+        } 
+    } 
 
-    if (num1 != 0) {
-        num2 = 9
-    } else {
-        num1 = 9
+    if (cBtnClicked === 'true') {
+        nineBtn.addEventListener('click', function () {
+            outputBox.textContent = 'nigga'
+        })
     }
+
     
-    if (num1 != 0 && functionValue === '') {
-        num1 += 9
-    } else if (num2 != 0 && functionValue != '') {
-        num2 += 9
-    }
 }) 
 
 document.addEventListener('keydown', function () {
@@ -368,9 +330,9 @@ addBtn.addEventListener('click', function () {
 
     
     if (addBtnClicked === 'true') {
-        subtractBtn.style.backgroundColor = 'gray'
-        multiplyBtn.style.backgroundColor = 'gray'
-        divideBtn.style.backgroundColor = 'gray'
+        subtractBtn.style.backgroundColor = ''
+        multiplyBtn.style.backgroundColor = ''
+        divideBtn.style.backgroundColor = ''
         addBtn.style.backgroundColor = 'lightgray'
     }
     if (expressionContainer.textContent != 0) {
@@ -390,9 +352,9 @@ subtractBtn.addEventListener('click', function () {
     subtractBtnClicked = 'true'
     
     if (subtractBtnClicked === 'true') {
-        addBtn.style.backgroundColor = 'gray'
-        multiplyBtn.style.backgroundColor = 'gray'
-        divideBtn.style.backgroundColor = 'gray'
+        addBtn.style.backgroundColor = ''
+        multiplyBtn.style.backgroundColor = ''
+        divideBtn.style.backgroundColor = ''
         subtractBtn.style.backgroundColor = 'lightgray'
     }
     if (expressionContainer.textContent != 0) {
@@ -410,9 +372,9 @@ subtractBtn.addEventListener('click', function () {
 multiplyBtn.addEventListener('click', function () {
     multiplyBtnClicked = 'true'
     if (multiplyBtnClicked === 'true') {
-        addBtn.style.backgroundColor = 'gray'
-        subtractBtn.style.backgroundColor = 'gray'
-        divideBtn.style.backgroundColor = 'gray'
+        addBtn.style.backgroundColor = ''
+        subtractBtn.style.backgroundColor = ''
+        divideBtn.style.backgroundColor = ''
         multiplyBtn.style.backgroundColor = 'lightgray'
     }
     if (expressionContainer.textContent != 0) {
@@ -431,9 +393,9 @@ multiplyBtn.addEventListener('click', function () {
 divideBtn.addEventListener('click', function () {
     divideBtnClicked = 'true'
     if (divideBtnClicked === 'true') {
-        addBtn.style.backgroundColor = 'gray'
-        subtractBtn.style.backgroundColor = 'gray'
-        multiplyBtn.style.backgroundColor = 'gray'
+        addBtn.style.backgroundColor = ''
+        subtractBtn.style.backgroundColor = ''
+        multiplyBtn.style.backgroundColor = ''
         divideBtn.style.backgroundColor = 'lightgray'
     }
     if (expressionContainer.textContent != 0) {
@@ -453,6 +415,7 @@ divideBtn.addEventListener('click', function () {
 equalsBtn.addEventListener('click', operate)
 
 function operate() {
+
     problemDisplay.textContent = problemDisplayValue.textContent + '='
     addBtn.style.backgroundColor = ''
     subtractBtn.style.backgroundColor = ''
