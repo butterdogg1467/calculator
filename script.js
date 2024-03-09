@@ -23,7 +23,8 @@ let equalsBtn = document.querySelector('#equals')
 let outputBox = document.querySelector('#outputbox')
 let problemDisplay = document.querySelector('.problemdisplay')
 let problemDisplayValue = document.querySelector('.problemdisplayvalue')
-let functionValueContainer = document.querySelector('.functionvaluecontainer')
+let expressionContainer = document.querySelector('.functionvaluecontainer')
+let generalButton = document.querySelectorAll('.button')
 let functionValue;
 let num1 = 0;
 let num2 = 0;
@@ -34,11 +35,18 @@ let subtractBtnClicked;
 let multiplyBtnClicked;
 let divideBtnClicked; 
 
+generalButton.forEach(button => {
+    
+    button.addEventListener('click', function () {
+    })
+})
+
 outputBox.textContent += 0
 
 ceBtn.addEventListener('click', function () {
-    num2 = 0;
-    functionValueContainer.textContent = '';
+    expressionContainer.textContent = 0
+    let currentValue = problemDisplayValue.textContent
+    problemDisplayValue.textContent = currentValue.slice(0, -1)
 })
 
 cBtn.addEventListener('click', function () {
@@ -51,11 +59,15 @@ cBtn.addEventListener('click', function () {
     cBtnClicked.value = 'true'
     problemDisplay.textContent = ''
     problemDisplayValue.textContent = ''
-    functionValueContainer.textContent = ''
-    addBtn.style.backgroundColor = 'gray'
-    subtractBtn.style.backgroundColor = 'gray'
-    multiplyBtn.style.backgroundColor = 'gray'
-    divideBtn.style.backgroundColor = 'gray'
+    expressionContainer.textContent = ''
+    addBtnClicked = 'false'
+    subtractBtnClicked = 'false'
+    multiplyBtnClicked = 'false'
+    divideBtnClicked = 'false'
+    addBtn.style.backgroundColor = ''
+    subtractBtn.style.backgroundColor = ''
+    multiplyBtn.style.backgroundColor = ''
+    divideBtn.style.backgroundColor = ''
 })
 
 window.addEventListener('beforeunload', function() {
@@ -68,7 +80,7 @@ window.addEventListener('beforeunload', function() {
     cBtnClicked.value = 'true'
     problemDisplay.textContent = ''
     problemDisplayValue.textContent = ''
-    functionValueContainer.textContent = ''
+    expressionContainer.textContent = ''
 })
 
 
@@ -76,7 +88,7 @@ window.addEventListener('beforeunload', function() {
 zeroBtn.addEventListener('click', function () {
     if (outputBox.textContent != 0) {
         outputBox.textContent += 0 
-        functionValueContainer.textContent += 0
+        expressionContainer.textContent += 0
         problemDisplayValue.textContent += 0
     }
     
@@ -84,15 +96,17 @@ zeroBtn.addEventListener('click', function () {
 
 
 oneBtn.addEventListener('click', function () {
-    if (outputBox.textContent != 0) {
-        outputBox.textContent = 1
+    if (outputBox.textContent != 0 ) {
+        outputBox.textContent += 1
         problemDisplayValue.textContent += 1
-        functionValueContainer.textContent += 1
+        expressionContainer.textContent += 1
     } else {
         outputBox.textContent = 1
         problemDisplayValue.textContent = 1
-        functionValueContainer.textContent = 1
+        expressionContainer.textContent = 1
     }
+
+    
 
     if (num1 != 0) {
         num2 = 1
@@ -110,14 +124,15 @@ oneBtn.addEventListener('click', function () {
 
 twoBtn.addEventListener('click', function () {
     if (outputBox.textContent != 0) {
-        outputBox.textContent = 2
+        outputBox.textContent += 2
         problemDisplayValue.textContent += 2
-        functionValueContainer.textContent += 2
+        expressionContainer.textContent += 2
     } else {
         outputBox.textContent = 2
         problemDisplayValue.textContent = 2
-        functionValueContainer.textContent = 2
+        expressionContainer.textContent = 2
     }
+    
     
     if (num1 != 0) {
         num2 = 2
@@ -134,14 +149,16 @@ twoBtn.addEventListener('click', function () {
 
 threeBtn.addEventListener('click', function () {
     if (outputBox.textContent != 0) {
-        outputBox.textContent = 3
+        outputBox.textContent += 3
         problemDisplayValue.textContent += 3
-        functionValueContainer.textContent += 3
+        expressionContainer.textContent += 3
     } else {
         outputBox.textContent = 3
         problemDisplayValue.textContent = 3
-        functionValueContainer.textContent = 3
+        expressionContainer.textContent = 3
     }
+
+    
 
     if (num1 != 0) {
         num2 = 3
@@ -158,14 +175,16 @@ threeBtn.addEventListener('click', function () {
 
 fourBtn.addEventListener('click', function () {
     if (outputBox.textContent != 0) {
-        outputBox.textContent = 4
+        outputBox.textContent += 4
         problemDisplayValue.textContent += 4
-        functionValueContainer.textContent += 4
+        expressionContainer.textContent += 4
     } else {
         outputBox.textContent = 4
         problemDisplayValue.textContent = 4
-        functionValueContainer.textContent = 4
+        expressionContainer.textContent = 4
     }
+
+    
 
     if (num1 != 0) {
         num2 = 4
@@ -182,14 +201,16 @@ fourBtn.addEventListener('click', function () {
 
 fiveBtn.addEventListener('click', function () {
     if (outputBox.textContent != 0) {
-        outputBox.textContent = 5
+        outputBox.textContent += 5
         problemDisplayValue.textContent += 5
-        functionValueContainer.textContent += 5
+        expressionContainer.textContent += 5
     } else {
         outputBox.textContent = 5
         problemDisplayValue.textContent = 5
-        functionValueContainer.textContent = 5
+        expressionContainer.textContent = 5
     }
+
+    
 
     if (num1 != 0) {
         num2 = 5
@@ -206,14 +227,16 @@ fiveBtn.addEventListener('click', function () {
 
 sixBtn.addEventListener('click', function () {
     if (outputBox.textContent != 0) {
-        outputBox.textContent = 6
+        outputBox.textContent += 6
         problemDisplayValue.textContent += 6
-        functionValueContainer.textContent += 6
+        expressionContainer.textContent += 6
     } else {
         outputBox.textContent = 6
         problemDisplayValue.textContent = 6
-        functionValueContainer.textContent = 6
+        expressionContainer.textContent = 6
     }
+
+    
 
     if (num1 != 0) {
         num2 = 6
@@ -230,14 +253,16 @@ sixBtn.addEventListener('click', function () {
 
 sevenBtn.addEventListener('click', function () {
     if (outputBox.textContent != 0) {
-        outputBox.textContent = 7
+        outputBox.textContent += 7
         problemDisplayValue.textContent += 7
-        functionValueContainer.textContent += 7
+        expressionContainer.textContent += 7
     } else {
         outputBox.textContent = 7
         problemDisplayValue.textContent = 7
-        functionValueContainer.textContent = 7
+        expressionContainer.textContent = 7
     }
+
+    
 
     if (num1 != 0) {
         num2 = 7
@@ -254,14 +279,16 @@ sevenBtn.addEventListener('click', function () {
 
 eightBtn.addEventListener('click', function () {
     if (outputBox.textContent != 0) {
-        outputBox.textContent = 8
+        outputBox.textContent += 8
         problemDisplayValue.textContent += 8
-        functionValueContainer.textContent += 8
+        expressionContainer.textContent += 8
     } else {
         outputBox.textContent = 8
         problemDisplayValue.textContent = 8
-        functionValueContainer.textContent = 8
+        expressionContainer.textContent = 8
     }
+
+    
 
     if (num1 != 0) {
         num2 = 8
@@ -275,17 +302,17 @@ eightBtn.addEventListener('click', function () {
         num2 += 8
     }
 }) 
-
 nineBtn.addEventListener('click', function () {
-    if (outputBox.textContent != 0) {
-        outputBox.textContent = 9
+    if (outputBox.textContent != 0 || functionValue === '') {
+        outputBox.textContent += 9
         problemDisplayValue.textContent += 9
-        functionValueContainer.textContent += 9
-    } else {
+        expressionContainer.textContent += 9
+    } else if (outputBox.textContent != 0 || functionValue === ' + '){
         outputBox.textContent = 9
         problemDisplayValue.textContent = 9
-        functionValueContainer.textContent = 9
+        expressionContainer.textContent = 9
     }
+
 
     if (num1 != 0) {
         num2 = 9
@@ -300,9 +327,35 @@ nineBtn.addEventListener('click', function () {
     }
 }) 
 
+document.addEventListener('keydown', function () {
+    if (event.key === '1') {
+        if (outputBox.textContent != 0) {
+            outputBox.textContent = 1
+            problemDisplayValue.textContent += 1
+            expressionContainer.textContent += 1
+        } else {
+            outputBox.textContent = 1
+            problemDisplayValue.textContent = 1
+            expressionContainer.textContent = 1
+        }
+    
+        if (num1 != 0) {
+            num2 = 1
+        } else {
+            num1 = 1
+        }
+    
+        if (num1 != 0 && functionValue === '') {
+            num1 += 1
+        } else if (num2 != 0 && functionValue != '') {
+            num2 += 1
+        }
+    }
+})
 
 addBtn.addEventListener('click', function () {
     addBtnClicked = 'true'
+
     
     if (addBtnClicked === 'true') {
         subtractBtn.style.backgroundColor = 'gray'
@@ -310,15 +363,16 @@ addBtn.addEventListener('click', function () {
         divideBtn.style.backgroundColor = 'gray'
         addBtn.style.backgroundColor = 'lightgray'
     }
-    if (functionValueContainer.textContent != 0) {
+    if (expressionContainer.textContent != 0) {
         functionValue = ' + '
-        functionValueContainer.textContent += functionValue
+        expressionContainer.textContent += functionValue
         problemDisplayValue.textContent += functionValue
-        outputBox.value +=functionValue
-    } else if (functionValueContainer.textContent === '' || functionValueContainer.textContent === undefined ||functionValueContainer.textContent === null) {
+        outputBox.value += functionValue
+        
+    } else if (expressionContainer.textContent === '' || expressionContainer.textContent === undefined ||expressionContainer.textContent === null) {
         functionValue = ''
-        functionValueContainer.textContent = functionValue
-        outputBox.value +=functionValue
+        expressionContainer.textContent = functionValue
+        outputBox.value += functionValue
     } 
 })
 
@@ -331,14 +385,14 @@ subtractBtn.addEventListener('click', function () {
         divideBtn.style.backgroundColor = 'gray'
         subtractBtn.style.backgroundColor = 'lightgray'
     }
-    if (functionValueContainer.textContent != 0) {
+    if (expressionContainer.textContent != 0) {
         functionValue = ' - '
-        functionValueContainer.textContent += functionValue
+        expressionContainer.textContent += functionValue
         problemDisplayValue.textContent += functionValue
         outputBox.value +=functionValue
-    } else if (functionValueContainer.textContent === '' || functionValueContainer.textContent === undefined ||functionValueContainer.textContent === null) {
+    } else if (expressionContainer.textContent === '' || expressionContainer.textContent === undefined ||expressionContainer.textContent === null) {
         functionValue = ''
-        functionValueContainer.textContent += functionValue
+        expressionContainer.textContent += functionValue
         outputBox.value +=functionValue
     }
 })
@@ -351,14 +405,14 @@ multiplyBtn.addEventListener('click', function () {
         divideBtn.style.backgroundColor = 'gray'
         multiplyBtn.style.backgroundColor = 'lightgray'
     }
-    if (functionValueContainer.textContent != 0) {
+    if (expressionContainer.textContent != 0) {
         functionValue = ' × '
-        functionValueContainer.textContent +=functionValue
+        expressionContainer.textContent +=functionValue
         problemDisplayValue.textContent += functionValue
         outputBox.value +=functionValue
-    } else if (functionValueContainer.textContent === '' || functionValueContainer.textContent === undefined ||functionValueContainer.textContent === null) {
+    } else if (expressionContainer.textContent === '' || expressionContainer.textContent === undefined ||expressionContainer.textContent === null) {
         functionValue = ''
-        functionValueContainer.textContent += functionValue
+        expressionContainer.textContent += functionValue
         outputBox.value +=functionValue
     }
     
@@ -372,35 +426,37 @@ divideBtn.addEventListener('click', function () {
         multiplyBtn.style.backgroundColor = 'gray'
         divideBtn.style.backgroundColor = 'lightgray'
     }
-    if (functionValueContainer.textContent != 0) {
+    if (expressionContainer.textContent != 0) {
         functionValue = ' ÷ '
-        functionValueContainer.textContent += functionValue
+        expressionContainer.textContent += functionValue
         problemDisplayValue.textContent += functionValue
         outputBox.value +=functionValue
-    } else if (functionValueContainer.textContent === '' || functionValueContainer.textContent === undefined ||functionValueContainer.textContent === null) {
+    } else if (expressionContainer.textContent === '' || expressionContainer.textContent === undefined ||expressionContainer.textContent === null) {
         functionValue = ''       
-        functionValueContainer.textContent += functionValue
+        expressionContainer.textContent += functionValue
         outputBox.value +=functionValue
     }
 })
 
 
 
-equalsBtn.addEventListener('click', function operate() {
+equalsBtn.addEventListener('click', operate)
+
+function operate() {
     problemDisplay.textContent = problemDisplayValue.textContent + '='
-    addBtn.style.backgroundColor = 'gray'
-    subtractBtn.style.backgroundColor = 'gray'
-    multiplyBtn.style.backgroundColor = 'gray'
-    divideBtn.style.backgroundColor = 'gray'
+    addBtn.style.backgroundColor = ''
+    subtractBtn.style.backgroundColor = ''
+    multiplyBtn.style.backgroundColor = ''
+    divideBtn.style.backgroundColor = ''
     
     if (functionValue === ' + ') {
-        let strProb = functionValueContainer.textContent
+        let strProb = expressionContainer.textContent
         let splitProb = strProb.split(' + ')
         sum = 0
         let numberz = splitProb.map((num => Number(num)))
         sum = numberz.reduce((accumulator, currentValue) => accumulator + currentValue)
         outputBox.textContent = sum
-        functionValueContainer.textContent = sum
+        expressionContainer.textContent = 'sum'
             if (cBtnClicked === 'false') {
                 num1 = sum
             } 
@@ -408,13 +464,13 @@ equalsBtn.addEventListener('click', function operate() {
                 sum = sum.toFixed(1)
             }
     } else if (functionValue === ' - ') {
-    let strProb = functionValueContainer.textContent
+    let strProb = expressionContainer.textContent
     let splitProb = strProb.split('-')
     sum = 0
     let numberz = splitProb.map((num => Number(num)))
     sum = numberz.reduce((accumulator, currentValue) => accumulator - currentValue)
     outputBox.textContent = sum
-    functionValueContainer.textContent = sum
+    expressionContainer.textContent = sum
         if (cBtnClicked === 'false') {
             num1 = sum
         } 
@@ -422,13 +478,13 @@ equalsBtn.addEventListener('click', function operate() {
             sum = sum.toFixed(1)
         }
     } else if (functionValue === ' × ') {
-    let strProb = functionValueContainer.textContent
+    let strProb = expressionContainer.textContent
     let splitProb = strProb.split('×')
     sum = 0
     let numberz = splitProb.map((num => Number(num)))
     sum = numberz.reduce((accumulator, currentValue) => accumulator * currentValue)
     outputBox.textContent = sum
-    functionValueContainer.textContent = sum
+    expressionContainer.textContent = sum
         if (cBtnClicked === 'false') {
             num1 = sum
         } 
@@ -436,7 +492,7 @@ equalsBtn.addEventListener('click', function operate() {
             sum = sum.toFixed(1)
         }
     } else if (functionValue === ' ÷ ') {
-    let strProb = functionValueContainer.textContent
+    let strProb = expressionContainer.textContent
     let splitProb = strProb.split('÷')
     sum = 0
     let numberz = splitProb.map((num => Number(num)))
@@ -445,15 +501,13 @@ equalsBtn.addEventListener('click', function operate() {
         sum = sum.toFixed(1)
     }
     outputBox.textContent = sum
-    functionValueContainer.textContent = sum
+    expressionContainer.textContent = sum
         if (cBtnClicked === 'false') {
             num1 = sum
         } 
         
     }
-})
-
-
+}
 
 })
 
