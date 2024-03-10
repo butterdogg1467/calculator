@@ -119,7 +119,11 @@ oneBtn.addEventListener('click', function () {
     if (functionValue === ' + ' && outputBox.textContent === '+') {
         outputBox.textContent = 1
     } 
-
+    if (num1 != 0 && functionValue === '') {
+        num1 += 1
+    } else if (num2 != 0 && functionValue != '') {
+        num2 += 1
+    }
     
 }) 
 
@@ -144,7 +148,11 @@ twoBtn.addEventListener('click', function () {
     if (functionValue === ' + ' && outputBox.textContent === '+') {
         outputBox.textContent = 2
     } 
-
+    if (num1 != 0 && functionValue === '') {
+        num1 += 2
+    } else if (num2 != 0 && functionValue != '') {
+        num2 += 2
+    }
     
 }) 
 
@@ -169,7 +177,11 @@ threeBtn.addEventListener('click', function () {
     if (functionValue === ' + ' && outputBox.textContent === '+') {
         outputBox.textContent = 3
     } 
-
+    if (num1 != 0 && functionValue === '') {
+        num1 += 3
+    } else if (num2 != 0 && functionValue != '') {
+        num2 += 3
+    }
 
    
 }) 
@@ -195,6 +207,11 @@ fourBtn.addEventListener('click', function () {
     if (functionValue === ' + ' && outputBox.textContent === '+') {
         outputBox.textContent = 4
     } 
+if (num1 != 0 && functionValue === '') {
+        num1 += 4
+    } else if (num2 != 0 && functionValue != '') {
+        num2 += 4
+    }   
 
 
     
@@ -221,7 +238,11 @@ fiveBtn.addEventListener('click', function () {
     if (functionValue === ' + ' && outputBox.textContent === '+') {
         outputBox.textContent = 5
     } 
-
+if (num1 != 0 && functionValue === '') {
+        num1 += 5
+    } else if (num2 != 0 && functionValue != '') {
+        num2 += 5
+    }
 
     
 }) 
@@ -247,7 +268,11 @@ sixBtn.addEventListener('click', function () {
     if (functionValue === ' + ' && outputBox.textContent === '+') {
         outputBox.textContent = 6
     } 
-
+if (num1 != 0 && functionValue === '') {
+        num1 += 6
+    } else if (num2 != 0 && functionValue != '') {
+        num2 += 6
+    }
 
     
 }) 
@@ -273,7 +298,11 @@ sevenBtn.addEventListener('click', function () {
     if (functionValue === ' + ' && outputBox.textContent === '+') {
         outputBox.textContent = 7
     } 
-
+if (num1 != 0 && functionValue === '') {
+        num1 += 7
+    } else if (num2 != 0 && functionValue != '') {
+        num2 += 7
+    }
 
     
 }) 
@@ -299,7 +328,11 @@ eightBtn.addEventListener('click', function () {
     if (functionValue === ' + ' && outputBox.textContent === '+') {
         outputBox.textContent = 8
     } 
-
+if (num1 != 0 && functionValue === '') {
+        num1 += 8
+    } else if (num2 != 0 && functionValue != '') {
+        num2 += 8
+    }
     
 }) 
 nineBtn.addEventListener('click', function () {
@@ -323,7 +356,11 @@ nineBtn.addEventListener('click', function () {
     if (functionValue === ' + ' && outputBox.textContent === '+') {
         outputBox.textContent = 9
     } 
-
+if (num1 != 0 && functionValue === '') {
+        num1 += 9
+    } else if (num2 != 0 && functionValue != '') {
+        num2 += 9
+    }
 }) 
 
 document.addEventListener('keydown', function () {
@@ -746,7 +783,10 @@ function operate() {
         outputBox.textContent = sum
         expressionContainer.textContent = 'sum'
             if (cBtnClicked === 'false') {
-                num1 = sum
+                expressionContainer.textContent = sum
+                outputBox.textContent = sum
+                problemDisplayValue.textContent = sum
+                problemDisplay.textContent = sum
             } 
             if (sum % 1 !== 0) {
                 sum = sum.toFixed(1)
@@ -760,7 +800,10 @@ function operate() {
     outputBox.textContent = sum
     expressionContainer.textContent = sum
         if (cBtnClicked === 'false') {
-            num1 = sum
+            expressionContainer.textContent = sum
+            outputBox.textContent = sum
+            problemDisplayValue.textContent = sum
+            problemDisplay.textContent = sum
         } 
         if (sum % 1 !== 0) {
             sum = sum.toFixed(1)
@@ -774,7 +817,10 @@ function operate() {
     outputBox.textContent = sum
     expressionContainer.textContent = sum
         if (cBtnClicked === 'false') {
-            num1 = sum
+            expressionContainer.textContent = sum
+            outputBox.textContent = sum
+            problemDisplayValue.textContent = sum
+            problemDisplay.textContent = sum
         } 
         if (sum % 1 !== 0) {
             sum = sum.toFixed(1)
@@ -791,7 +837,10 @@ function operate() {
     outputBox.textContent = sum
     expressionContainer.textContent = sum
         if (cBtnClicked === 'false') {
-            num1 = sum
+            expressionContainer.textContent = sum
+            outputBox.textContent = sum
+            problemDisplayValue.textContent = sum
+            problemDisplay.textContent = sum
         } 
         
     }
