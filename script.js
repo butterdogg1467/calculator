@@ -34,7 +34,19 @@ let addBtnClicked;
 let subtractBtnClicked;
 let multiplyBtnClicked;
 let divideBtnClicked; 
-let nineBtnClicked = 'false'
+let decimalAdded = 'false'
+
+function addDecimal(){
+    if (outputBox.textContent != 0 && decimalAdded === 'false') {
+        outputBox.textContent += '.'
+        problemDisplayValue.textContent += '.'
+        expressionContainer.textContent += '.'
+        problemDisplay.textContent += '.'
+        decimalAdded = 'true'
+    }
+}
+
+decimal.addEventListener('click', addDecimal)
 
 generalButton.forEach(button => {
     
@@ -52,6 +64,7 @@ ceBtn.addEventListener('click', function () {
 })
 
 function clear() {
+    decimalAdded = 'false'
     outputBox.textContent = 0
     outputBox.value = 0
     sum = 0
@@ -364,6 +377,9 @@ if (num1 != 0 && functionValue === '') {
 }) 
 
 document.addEventListener('keydown', function () {
+    if(event.key === '.') {
+        addDecimal()
+    }
     if (outputBox.textContent != '0' && event.key === '0') {
         outputBox.textContent += 0 
         expressionContainer.textContent += 0
@@ -606,6 +622,8 @@ if (event.key === 'c' || event.key === 'C') {
 function addition () {
     addBtnClicked = 'true'
     functionValue = ' + '
+    decimalAdded = 'false'
+    
     
     if (addBtnClicked === 'true') {
         subtractBtn.style.backgroundColor = ''
@@ -633,6 +651,8 @@ function addition () {
 
 function subtraction() {
     subtractBtnClicked = 'true'
+    decimalAdded = 'false'
+    
     
     if (subtractBtnClicked === 'true') {
         addBtn.style.backgroundColor = ''
@@ -659,6 +679,8 @@ function subtraction() {
 
 function multiplication() {
     multiplyBtnClicked = 'true'
+    decimalAdded = 'false'
+    
     if (multiplyBtnClicked === 'true') {
         addBtn.style.backgroundColor = ''
         subtractBtn.style.backgroundColor = ''
@@ -685,6 +707,8 @@ function multiplication() {
 
 function division() {
     divideBtnClicked = 'true'
+    decimalAdded = 'false'
+    
     if (divideBtnClicked === 'true') {
         addBtn.style.backgroundColor = ''
         subtractBtn.style.backgroundColor = ''
