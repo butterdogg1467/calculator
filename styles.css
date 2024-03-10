@@ -9,11 +9,14 @@ body {
 }
 
 .problemdisplay {
-    background-color: green;
+    background-color: black;
     font-family: 'Digital-7', sans-serif;
     text-align: start;
+    text-shadow: 0 0 20px green;
+    color: green;
     padding-left: 15px;
-    font-size: 70px;
+    padding-top: 15px;
+    font-size: 50px;
     height: 70px;
     border-top: darkgray solid;
     border-top-width: 25px;
@@ -31,7 +34,9 @@ body {
 }
 
 #outputbox {
-    background-color: green;
+    background-color: black;
+    color: green;
+    text-shadow: 0 0 20px green;
     font-family: 'Digital-7', sans-serif;
     text-align: end;
     padding-right: 15px;
@@ -43,6 +48,7 @@ body {
     border-left-width: 25px;
     border-right: darkgray solid;
     border-right-width: 25px;
+    
 }
 
 

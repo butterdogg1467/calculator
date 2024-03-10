@@ -34,6 +34,7 @@ let addBtnClicked;
 let subtractBtnClicked;
 let multiplyBtnClicked;
 let divideBtnClicked; 
+let nineBtnClicked = 'false'
 
 generalButton.forEach(button => {
     
@@ -52,14 +53,14 @@ ceBtn.addEventListener('click', function () {
 cBtn.addEventListener('click', function () {
     outputBox.textContent = 0
     outputBox.value = 0
-    num1 = 0
-    num2 = 0
     sum = 0
-    functionValue = ''
-    cBtnClicked= 'true'
+    functionValue = ' '
+    cBtnClicked = 'true'
     problemDisplay.textContent = ''
-    problemDisplayValue.textContent = ''
-    expressionContainer.textContent = ''
+    problemDisplayValue.textContent = 0
+    expressionContainer.textContent = 0
+    num1 = 0;
+    num2 = 0;
     addBtnClicked = 'false'
     subtractBtnClicked = 'false'
     multiplyBtnClicked = 'false'
@@ -68,6 +69,7 @@ cBtn.addEventListener('click', function () {
     subtractBtn.style.backgroundColor = ''
     multiplyBtn.style.backgroundColor = ''
     divideBtn.style.backgroundColor = ''
+    nineBtnClicked = 'false'
 })
 
 window.addEventListener('beforeunload', function() {
@@ -111,9 +113,13 @@ oneBtn.addEventListener('click', function () {
         expressionContainer.textContent = 1
     }
 
-    
+    cBtnClicked = 'false'
 
-    
+    if (num1 != 0 && functionValue === '') {
+        num1 += 1
+    } else if (num2 != 0 && functionValue != '') {
+        num2 += 1
+    }
     
 }) 
 
@@ -133,7 +139,13 @@ twoBtn.addEventListener('click', function () {
         expressionContainer.textContent = 2
     }
     
-    
+    cBtnClicked = 'false'
+
+    if (num1 != 0 && functionValue === '') {
+        num1 += 2
+    } else if (num2 != 0 && functionValue != '') {
+        num2 += 2
+    }
     
 }) 
 
@@ -153,7 +165,13 @@ threeBtn.addEventListener('click', function () {
         expressionContainer.textContent = 3
     }
 
-    
+    cBtnClicked = 'false'
+
+    if (num1 != 0 && functionValue === '') {
+        num1 += 3
+    } else if (num2 != 0 && functionValue != '') {
+        num2 += 3
+    }
 
    
 }) 
@@ -174,7 +192,13 @@ fourBtn.addEventListener('click', function () {
         expressionContainer.textContent = 4
     }
 
-    
+    cBtnClicked = 'false'
+
+    if (num1 != 0 && functionValue === '') {
+        num1 += 4
+    } else if (num2 != 0 && functionValue != '') {
+        num2 += 4
+    }
 
     
 }) 
@@ -195,7 +219,13 @@ fiveBtn.addEventListener('click', function () {
         expressionContainer.textContent = 5
     }
 
-    
+    cBtnClicked = 'false'
+
+    if (num1 != 0 && functionValue === '') {
+        num1 += 5
+    } else if (num2 != 0 && functionValue != '') {
+        num2 += 5
+    }
 
     
 }) 
@@ -216,7 +246,13 @@ sixBtn.addEventListener('click', function () {
         expressionContainer.textContent = 6
     }
 
-    
+    cBtnClicked = 'false'
+
+    if (num1 != 0 && functionValue === '') {
+        num1 += 6
+    } else if (num2 != 0 && functionValue != '') {
+        num2 += 6
+    }
 
     
 }) 
@@ -237,7 +273,13 @@ sevenBtn.addEventListener('click', function () {
         expressionContainer.textContent = 7
     }
 
-    
+    cBtnClicked = 'false'
+
+    if (num1 != 0 && functionValue === '') {
+        num1 += 1
+    } else if (num2 != 0 && functionValue != '') {
+        num2 += 1
+    }
 
     
 }) 
@@ -247,19 +289,28 @@ eightBtn.addEventListener('click', function () {
     subtractBtn.style.backgroundColor = ''
     multiplyBtn.style.backgroundColor = ''
     divideBtn.style.backgroundColor = ''
+    cBtnClicked = 'false'
 
-    if (outputBox.textContent != 0) {
-        outputBox.textContent += 8
-        problemDisplayValue.textContent += 8
-        expressionContainer.textContent += 8
-    } else {
+    if (outputBox.textContent == '0') {
         outputBox.textContent = 8
         problemDisplayValue.textContent = 8
         expressionContainer.textContent = 8
+
+    } else if (outputBox.textContent != '0' ){
+        outputBox.textContent += 8
+        problemDisplayValue.textContent += 8
+        expressionContainer.textContent += 8
     }
 
-    
-
+    if (functionValue === ' + '){
+        if (outputBox.textContent != '0') {
+            outputBox.textContent = 8
+            eightBtn.addEventListener('click', function () {
+                outputBox.textContent += 8
+                
+            })
+        } 
+    } 
     
 }) 
 
@@ -268,34 +319,19 @@ nineBtn.addEventListener('click', function () {
     subtractBtn.style.backgroundColor = ''
     multiplyBtn.style.backgroundColor = ''
     divideBtn.style.backgroundColor = ''
-
-    if (outputBox.textContent == '0') {
+    
+    if (outputBox.textContent === '0') {
         outputBox.textContent = 9
         problemDisplayValue.textContent = 9
+        problemDisplay.textContent = 9
         expressionContainer.textContent = 9
-
-    } else {
+    } else if (outputBox.textContent != '0' ) {
         outputBox.textContent += 9
         problemDisplayValue.textContent += 9
+        problemDisplay.textContent += 9
         expressionContainer.textContent += 9
     }
-
-    if (functionValue === ' + '){
-        if (outputBox.textContent != 0) {
-            outputBox.textContent = 9
-            nineBtn.addEventListener('click', function () {
-                outputBox.textContent += 9
-                
-            })
-        } 
-    } 
-
-    if (cBtnClicked === 'true') {
-        nineBtn.addEventListener('click', function () {
-            outputBox.textContent = 'nigga'
-        })
-    }
-
+    
     
 }) 
 
@@ -327,7 +363,7 @@ document.addEventListener('keydown', function () {
 
 addBtn.addEventListener('click', function () {
     addBtnClicked = 'true'
-
+    functionValue = ' + '
     
     if (addBtnClicked === 'true') {
         subtractBtn.style.backgroundColor = ''
@@ -339,6 +375,7 @@ addBtn.addEventListener('click', function () {
         functionValue = ' + '
         expressionContainer.textContent += functionValue
         problemDisplayValue.textContent += functionValue
+        problemDisplay.textContent += functionValue
         outputBox.value += functionValue
         
     } else if (expressionContainer.textContent === '' || expressionContainer.textContent === undefined ||expressionContainer.textContent === null) {
