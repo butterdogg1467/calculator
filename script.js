@@ -24,7 +24,7 @@ let outputBox = document.querySelector('#outputbox')
 let problemDisplay = document.querySelector('.problemdisplay')
 let problemDisplayValue = document.querySelector('.problemdisplayvalue')
 let expressionContainer = document.querySelector('.functionvaluecontainer')
-let generalButton = document.querySelectorAll('.button')
+let generalButton = document.querySelectorAll('.nonclearbutton')
 let functionValue;
 let num1 = 0;
 let num2 = 0;
@@ -39,6 +39,7 @@ let nineBtnClicked = 'false'
 generalButton.forEach(button => {
     
     button.addEventListener('click', function () {
+        cBtnClicked = 'false'
     })
 })
 
@@ -55,7 +56,6 @@ function clear() {
     outputBox.value = 0
     sum = 0
     functionValue = ' '
-    cBtnClicked = 'true'
     problemDisplay.textContent = ''
     problemDisplayValue.textContent = 0
     expressionContainer.textContent = 0
@@ -86,16 +86,16 @@ window.addEventListener('beforeunload', function() {
     expressionContainer.textContent = ''
 })
 
-
-
-zeroBtn.addEventListener('click', function () {
+function zero() {
     if (outputBox.textContent != 0) {
         outputBox.textContent += 0 
         expressionContainer.textContent += 0
         problemDisplayValue.textContent += 0
+        problemDisplay.textContent += 0
     }
-    
-}) 
+}
+
+zeroBtn.addEventListener('click', zero) 
 
 
 oneBtn.addEventListener('click', function () {
@@ -364,6 +364,12 @@ if (num1 != 0 && functionValue === '') {
 }) 
 
 document.addEventListener('keydown', function () {
+    if (outputBox.textContent != '0' && event.key === '0') {
+        outputBox.textContent += 0 
+        expressionContainer.textContent += 0
+        problemDisplayValue.textContent += 0
+        problemDisplay.textContent += 0
+    }
     if (event.key === '1') {
         addBtn.style.backgroundColor = ''
     subtractBtn.style.backgroundColor = ''
@@ -803,7 +809,7 @@ function operate() {
             expressionContainer.textContent = sum
             outputBox.textContent = sum
             problemDisplayValue.textContent = sum
-            problemDisplay.textContent = sum
+            problemDisplay.textContent = sum 
         } 
         if (sum % 1 !== 0) {
             sum = sum.toFixed(1)
