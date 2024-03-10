@@ -626,6 +626,9 @@ function addition () {
         expressionContainer.textContent = functionValue
         outputBox.value += functionValue
     } 
+    if (sum != 0) {
+        problemDisplay.textContent = sum + ' + '
+    }
 }
 
 function subtraction() {
@@ -649,6 +652,9 @@ function subtraction() {
         expressionContainer.textContent += functionValue
         outputBox.value +=functionValue
     }
+    if (sum != 0) {
+        problemDisplay.textContent = sum + ' - '
+    }
 }
 
 function multiplication() {
@@ -670,6 +676,9 @@ function multiplication() {
         functionValue = ''
         expressionContainer.textContent += functionValue
         outputBox.value +=functionValue
+    }
+    if (sum != 0) {
+        problemDisplay.textContent = sum + ' × '
     }
     
 }
@@ -693,6 +702,9 @@ function division() {
         functionValue = ''       
         expressionContainer.textContent += functionValue
         outputBox.value +=functionValue
+    }
+    if (sum != 0) {
+        problemDisplay.textContent = sum + ' ÷ '
     }
 }
 addBtn.addEventListener('click', addition)
@@ -792,7 +804,6 @@ function operate() {
                 expressionContainer.textContent = sum
                 outputBox.textContent = sum
                 problemDisplayValue.textContent = sum
-                problemDisplay.textContent = sum
             } 
             if (sum % 1 !== 0) {
                 sum = sum.toFixed(1)
@@ -809,7 +820,6 @@ function operate() {
             expressionContainer.textContent = sum
             outputBox.textContent = sum
             problemDisplayValue.textContent = sum
-            problemDisplay.textContent = sum 
         } 
         if (sum % 1 !== 0) {
             sum = sum.toFixed(1)
@@ -826,7 +836,6 @@ function operate() {
             expressionContainer.textContent = sum
             outputBox.textContent = sum
             problemDisplayValue.textContent = sum
-            problemDisplay.textContent = sum
         } 
         if (sum % 1 !== 0) {
             sum = sum.toFixed(1)
@@ -846,7 +855,6 @@ function operate() {
             expressionContainer.textContent = sum
             outputBox.textContent = sum
             problemDisplayValue.textContent = sum
-            problemDisplay.textContent = sum
         } 
         
     }
