@@ -36,6 +36,8 @@ let multiplyBtnClicked;
 let divideBtnClicked; 
 let decimalAdded = 'false'
 
+
+
 function addDecimal(){
     if (outputBox.textContent != 0 && decimalAdded === 'false') {
         outputBox.textContent += '.'
@@ -106,6 +108,13 @@ function zero() {
         problemDisplayValue.textContent += 0
         problemDisplay.textContent += 0
     }
+    if (problemDisplay.textContent != '' && sum != '') {    
+        problemDisplay.textContent = 0
+        problemDisplayValue.textContent = 0
+        expressionContainer.textContent = 0
+        outputBox.textContent = 0
+    }
+    
 }
 
 zeroBtn.addEventListener('click', zero) 
@@ -137,6 +146,13 @@ oneBtn.addEventListener('click', function () {
     } else if (num2 != 0 && functionValue != '') {
         num2 += 1
     }
+
+    if (problemDisplay.textContent != '' && sum != '') {    
+        problemDisplay.textContent = 1
+        problemDisplayValue.textContent = 1
+        expressionContainer.textContent = 1
+        outputBox.textContent = 1
+    }
     
 }) 
 
@@ -165,6 +181,13 @@ twoBtn.addEventListener('click', function () {
         num1 += 2
     } else if (num2 != 0 && functionValue != '') {
         num2 += 2
+    }
+
+    if (problemDisplay.textContent != '' && sum != '' && functionValue === ' ') {    
+        problemDisplay.textContent = 2
+        problemDisplayValue.textContent = 2
+        expressionContainer.textContent = 2
+        outputBox.textContent = 2
     }
     
 }) 
@@ -196,6 +219,13 @@ threeBtn.addEventListener('click', function () {
         num2 += 3
     }
 
+    if (problemDisplay.textContent != '' && sum != '' && functionValue === ' ') {    
+        problemDisplay.textContent = 3
+        problemDisplayValue.textContent = 3
+        expressionContainer.textContent = 3
+        outputBox.textContent = 3
+    }
+
    
 }) 
 
@@ -224,7 +254,14 @@ if (num1 != 0 && functionValue === '') {
         num1 += 4
     } else if (num2 != 0 && functionValue != '') {
         num2 += 4
-    }   
+    }
+    
+    if (problemDisplay.textContent != '' && sum != '' && functionValue === ' ') {    
+        problemDisplay.textContent = 4
+        problemDisplayValue.textContent = 4
+        expressionContainer.textContent = 4
+        outputBox.textContent = 4
+    }
 
 
     
@@ -257,6 +294,13 @@ if (num1 != 0 && functionValue === '') {
         num2 += 5
     }
 
+    if (problemDisplay.textContent != '' && sum != '' && functionValue === ' ') {    
+        problemDisplay.textContent = 5
+        problemDisplayValue.textContent = 5
+        expressionContainer.textContent = 5
+        outputBox.textContent = 5
+    }
+
     
 }) 
 
@@ -285,6 +329,13 @@ if (num1 != 0 && functionValue === '') {
         num1 += 6
     } else if (num2 != 0 && functionValue != '') {
         num2 += 6
+    }
+
+    if (problemDisplay.textContent != '' && sum != '' && functionValue === ' ') {    
+        problemDisplay.textContent = 6
+        problemDisplayValue.textContent = 6
+        expressionContainer.textContent = 6
+        outputBox.textContent = 6
     }
 
     
@@ -317,6 +368,13 @@ if (num1 != 0 && functionValue === '') {
         num2 += 7
     }
 
+    if (problemDisplay.textContent != '' && sum != '' && functionValue === ' ') {    
+        problemDisplay.textContent = 7
+        problemDisplayValue.textContent = 7
+        expressionContainer.textContent = 7
+        outputBox.textContent = 7
+    }
+
     
 }) 
 
@@ -346,6 +404,13 @@ if (num1 != 0 && functionValue === '') {
     } else if (num2 != 0 && functionValue != '') {
         num2 += 8
     }
+
+    if (problemDisplay.textContent != '' && sum != '' && functionValue === ' ') {    
+        problemDisplay.textContent = 8
+        problemDisplayValue.textContent = 8
+        expressionContainer.textContent = 8
+        outputBox.textContent = 8
+    }
     
 }) 
 nineBtn.addEventListener('click', function () {
@@ -373,6 +438,13 @@ if (num1 != 0 && functionValue === '') {
         num1 += 9
     } else if (num2 != 0 && functionValue != '') {
         num2 += 9
+    }
+
+    if (problemDisplay.textContent != '' && sum != '' && functionValue === ' ') {    
+        problemDisplay.textContent = 9
+        problemDisplayValue.textContent = 9
+        expressionContainer.textContent = 9
+        outputBox.textContent = 9
     }
 }) 
 
@@ -623,7 +695,7 @@ function addition () {
     addBtnClicked = 'true'
     functionValue = ' + '
     decimalAdded = 'false'
-    
+
     
     if (addBtnClicked === 'true') {
         subtractBtn.style.backgroundColor = ''
@@ -652,7 +724,7 @@ function addition () {
 function subtraction() {
     subtractBtnClicked = 'true'
     decimalAdded = 'false'
-    
+
     
     if (subtractBtnClicked === 'true') {
         addBtn.style.backgroundColor = ''
@@ -680,7 +752,7 @@ function subtraction() {
 function multiplication() {
     multiplyBtnClicked = 'true'
     decimalAdded = 'false'
-    
+
     if (multiplyBtnClicked === 'true') {
         addBtn.style.backgroundColor = ''
         subtractBtn.style.backgroundColor = ''
@@ -708,7 +780,7 @@ function multiplication() {
 function division() {
     divideBtnClicked = 'true'
     decimalAdded = 'false'
-    
+
     if (divideBtnClicked === 'true') {
         addBtn.style.backgroundColor = ''
         subtractBtn.style.backgroundColor = ''
