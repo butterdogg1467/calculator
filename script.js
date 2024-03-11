@@ -41,7 +41,23 @@ let decimalAdded = 'false'
 let coolDisplay; 
 let functionValueLength = 0
 
-negativeBtn.addEventListener('dblclick', function (){
+
+equalsBtn.addEventListener('dblclick', coolTheme)
+
+negativeBtn.addEventListener('click', negative)
+
+function negative() {
+    if (outputBox.textContent != 0) {
+        outputBox.textContent = '-' + outputBox.textContent
+        expressionContainer.textContent = '-' + expressionContainer.textContent
+        problemDisplayValue.textContent = '-' + problemDisplayValue.textContent
+        problemDisplay.textContent = '-' + problemDisplay.textContent
+    }
+}
+
+
+function coolTheme(){
+    if (outputBox.textContent === '1986') {
     coolDisplay === 'on'
     addBtn.classList.add('coolbutton')
     subtractBtn.classList.add('coolbutton')
@@ -71,7 +87,8 @@ negativeBtn.addEventListener('dblclick', function (){
     generalButton.forEach(button => {
         button.classList.add('coolbutton'); 
     });
-})
+}
+}
 
 
 function addDecimal(){
@@ -97,9 +114,7 @@ generalButton.forEach(button => {
 outputBox.textContent = 0
 
 ceBtn.addEventListener('click', function () {
-    expressionContainer.textContent = 0
-    let currentValue = problemDisplayValue.textContent
-    problemDisplayValue.textContent = currentValue.slice(0, -1)
+    
 })
 
 function clear() {
@@ -725,6 +740,10 @@ if (event.key === '/') {
 }
 if (event.key === 'c' || event.key === 'C') {
     clear()
+}
+
+if (event.keyCode === 13 && outputBox.textContent === '1986') {
+    coolTheme();
 }
 })
 
