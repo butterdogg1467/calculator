@@ -33,7 +33,7 @@ body {
     font-size: 0px;
 }
 
-#outputbox {
+.outputbox {
     background-color: black;
     color: green;
     text-shadow: 0 0 20px green;
@@ -48,8 +48,8 @@ body {
     border-left-width: 25px;
     border-right: darkgray solid;
     border-right-width: 25px;
-    
 }
+
 
 
 .buttoncontainer {
@@ -104,6 +104,117 @@ body {
 
 .button:hover {
     background-color:lightgray;
+}
+
+
+.coolcalculatorcontainer {
+    border: green solid;
+    border-radius: 15px;
+    box-shadow: 0 0 10px #00ff00;
+}
+
+
+.coolproblemdisplay {
+    background-color: black;
+    font-family: 'Digital-7', sans-serif;
+    text-align: start;
+    text-shadow: 0 0 20px green;
+    color: green;
+    padding-left: 15px;
+    padding-top: 15px;
+    font-size: 50px;    
+    height: 70px;
+    border-top: #000000 solid;
+    border-top-width: 25px;
+    border-left: #000000 solid;
+    border-left-width: 25px;
+    border-right: #000000 solid;
+    border-right-width: 25px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.coolproblemdisplayvalue,
+.coolfunctionvaluecontainer {
+    font-size: 0px;
+}
+
+.cooloutputbox {
+    background-color: black;
+    color: green;
+    text-shadow: 0 0 20px green;
+    font-family: 'Digital-7', sans-serif;
+    text-align: end;
+    padding-right: 15px;
+    font-size: 90px;
+    height: 100px;
+    border-bottom: black solid;
+    border-bottom-width: 25px;
+    border-left: black solid;
+    border-left-width: 25px;
+    border-right: black solid;
+    border-right-width: 25px;
+}
+
+
+
+
+.coolbuttoncontainer {
+    display: flex;
+    height: 500px;
+    background-color: black;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    padding-left: 25px;
+    padding-right: 25px;
+    padding-bottom: 35px;
+    padding-top: 0px;
+}
+
+.coolnumberbuttoncontainer {
+    display: flex;
+    flex-wrap: wrap;
+    flex-grow: 1;
+    max-width: 350px;
+    gap: 0;
+}
+
+.coolfunctionbuttoncontainer {
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px;
+    flex-grow: 1;
+    min-height: 508px;
+}
+
+.coolnumberbutton,
+.coolfunctionbutton,
+.coolclearbutton,
+#coolnegativebutton,
+#cooldecimal {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: larger;
+    flex-grow: 1;
+    margin: 1px;
+    width: 100px;
+    height: 100px;
+}
+
+
+.coolbutton {
+    border-radius: 25px;
+    border: solid green;
+    color: green;
+    box-shadow: 0 0 5px green;
+    text-shadow: 0 0 5px green;
+    background-color: black ;
+}
+
+.coolbutton:hover {
+    background-color:green;
+    color: black;
 }
 
 

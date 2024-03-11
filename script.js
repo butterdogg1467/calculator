@@ -20,11 +20,14 @@ let sevenBtn = document.querySelector('#btnseven')
 let eightBtn = document.querySelector('#btneight')
 let nineBtn = document.querySelector('#btnnine')
 let equalsBtn = document.querySelector('#equals')
-let outputBox = document.querySelector('#outputbox')
+let outputBox = document.querySelector('.outputbox')
 let problemDisplay = document.querySelector('.problemdisplay')
 let problemDisplayValue = document.querySelector('.problemdisplayvalue')
 let expressionContainer = document.querySelector('.functionvaluecontainer')
 let generalButton = document.querySelectorAll('.nonclearbutton')
+let buttonContainer = document.querySelector('.buttoncontainer')
+let calculatorContainer = document.querySelector('.calculatorcontainer')
+let numberButton = document.querySelector('.numberbutton')
 let functionValue;
 let num1 = 0;
 let num2 = 0;
@@ -35,7 +38,40 @@ let subtractBtnClicked;
 let multiplyBtnClicked;
 let divideBtnClicked; 
 let decimalAdded = 'false'
+let coolDisplay; 
+let functionValueLength = 0
 
+negativeBtn.addEventListener('dblclick', function (){
+    coolDisplay === 'on'
+    addBtn.classList.add('coolbutton')
+    subtractBtn.classList.add('coolbutton')
+    multiplyBtn.classList.add('coolbutton')
+    divideBtn.classList.add('coolbutton')
+
+    buttonContainer.classList.add('coolbuttoncontainer')
+    calculatorContainer.classList.add('coolcalculatorcontainer')
+    
+    cBtn.classList.add('coolbutton')
+    ceBtn.classList.add('coolbutton')
+    negativeBtn.classList.add('coolbutton')
+    decimal.classList.add('coolbutton')
+    zeroBtn.classList.add('coolbutton')
+    oneBtn.classList.add('coolbutton')
+    twoBtn.classList.add('coolbutton')
+    threeBtn.classList.add('coolbutton')
+    fourBtn.classList.add('coolbutton')
+    fiveBtn.classList.add('coolbutton')
+    sixBtn.classList.add('coolbutton')
+    sevenBtn.classList.add('coolbutton')
+    eightBtn.classList.add('coolbutton')
+    nineBtn.classList.add('coolbutton')
+    equalsBtn.classList.add('coolbutton')
+    outputBox.classList.add('cooloutputbox')
+    problemDisplay.classList.add('coolproblemdisplay')
+    generalButton.forEach(button => {
+        button.classList.add('coolbutton'); 
+    });
+})
 
 
 function addDecimal(){
@@ -56,6 +92,7 @@ generalButton.forEach(button => {
         cBtnClicked = 'false'
     })
 })
+
 
 outputBox.textContent = 0
 
@@ -84,7 +121,7 @@ function clear() {
     subtractBtn.style.backgroundColor = ''
     multiplyBtn.style.backgroundColor = ''
     divideBtn.style.backgroundColor = ''
-    nineBtnClicked = 'false'
+    functionValueLength = 0
 }
 cBtn.addEventListener('click', clear)
 
@@ -695,6 +732,7 @@ function addition () {
     addBtnClicked = 'true'
     functionValue = ' + '
     decimalAdded = 'false'
+    functionValueLength += 1
 
     
     if (addBtnClicked === 'true') {
@@ -724,6 +762,7 @@ function addition () {
 function subtraction() {
     subtractBtnClicked = 'true'
     decimalAdded = 'false'
+    functionValueLength += 1
 
     
     if (subtractBtnClicked === 'true') {
@@ -752,6 +791,7 @@ function subtraction() {
 function multiplication() {
     multiplyBtnClicked = 'true'
     decimalAdded = 'false'
+    functionValueLength += 1
 
     if (multiplyBtnClicked === 'true') {
         addBtn.style.backgroundColor = ''
@@ -780,6 +820,7 @@ function multiplication() {
 function division() {
     divideBtnClicked = 'true'
     decimalAdded = 'false'
+    functionValueLength += 1
 
     if (divideBtnClicked === 'true') {
         addBtn.style.backgroundColor = ''
@@ -823,70 +864,10 @@ function operate() {
     multiplyBtn.style.backgroundColor = ''
     divideBtn.style.backgroundColor = ''
 
-    // if (functionValue.length > 1) {
-    //     alert(functionValue.length)
-    //     for (let i = 0; i<functionValue.length; i++){
-    //         if (functionValue === ' + ') {
-    //             let strProb = expressionContainer.textContent
-    //             let splitProb = strProb.split(' + ')
-    //             sum = 0
-    //             let numberz = splitProb.map((num => Number(num)))
-    //             sum = numberz.reduce((accumulator, currentValue) => accumulator + currentValue)
-    //             outputBox.textContent = sum
-    //             expressionContainer.textContent = 'sum'
-    //                 if (cBtnClicked === 'false') {
-    //                     num1 = sum
-    //                 } 
-    //                 if (sum % 1 !== 0) {
-    //                     sum = sum.toFixed(1)
-    //                 }
-    //         } if (functionValue === ' - ') {
-    //         let strProb = expressionContainer.textContent
-    //         let splitProb = strProb.split('-')
-    //         sum = 0
-    //         let numberz = splitProb.map((num => Number(num)))
-    //         sum = numberz.reduce((accumulator, currentValue) => accumulator - currentValue)
-    //         outputBox.textContent = sum
-    //         expressionContainer.textContent = sum
-    //             if (cBtnClicked === 'false') {
-    //                 num1 = sum
-    //             } 
-    //             if (sum % 1 !== 0) {
-    //                 sum = sum.toFixed(1)
-    //             }
-    //         } if (functionValue === ' × ') {
-    //         let strProb = expressionContainer.textContent
-    //         let splitProb = strProb.split('×')
-    //         sum = 0
-    //         let numberz = splitProb.map((num => Number(num)))
-    //         sum = numberz.reduce((accumulator, currentValue) => accumulator * currentValue)
-    //         outputBox.textContent = sum
-    //         expressionContainer.textContent = sum
-    //             if (cBtnClicked === 'false') {
-    //                 num1 = sum
-    //             } 
-    //             if (sum % 1 !== 0) {
-    //                 sum = sum.toFixed(1)
-    //             }
-    //         } if (functionValue === ' ÷ ') {
-    //         let strProb = expressionContainer.textContent
-    //         let splitProb = strProb.split('÷')
-    //         sum = 0
-    //         let numberz = splitProb.map((num => Number(num)))
-    //         sum = numberz.reduce((accumulator, currentValue) => accumulator / currentValue)
-    //         if (sum % 1 !== 0) {
-    //             sum = sum.toFixed(1)
-    //         }
-    //         outputBox.textContent = sum
-    //         expressionContainer.textContent = sum
-    //             if (cBtnClicked === 'false') {
-    //                 num1 = sum
-    //             } 
-                
-    //         }
+    if (functionValueLength != 1) {
         
-    //     }
-    // }
+        
+    }
     
     if (functionValue === ' + ') {
         let strProb = expressionContainer.textContent
