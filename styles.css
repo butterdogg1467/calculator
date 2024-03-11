@@ -9,11 +9,11 @@ body {
 }
 
 .problemdisplay {
-    background-color: black;
+    background-color: green;
     font-family: 'Digital-7', sans-serif;
     text-align: start;
     text-shadow: 0 0 20px green;
-    color: green;
+    color: black;
     padding-left: 15px;
     padding-top: 15px;
     font-size: 50px;
@@ -34,8 +34,8 @@ body {
 }
 
 .outputbox {
-    background-color: black;
-    color: green;
+    background-color: green;
+    color: black;
     text-shadow: 0 0 20px green;
     font-family: 'Digital-7', sans-serif;
     text-align: end;

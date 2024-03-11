@@ -734,6 +734,11 @@ function addition () {
     decimalAdded = 'false'
     functionValueLength += 1
 
+    if(outputBox.textContent != '' || problemDisplay.textContent != '' || expressionContainer.textContent != '' || problemDisplayValue.textContent != '') {
+        operate()
+        outputBox.textContent = sum
+    }
+
     
     if (addBtnClicked === 'true') {
         subtractBtn.style.backgroundColor = ''
@@ -764,6 +769,11 @@ function subtraction() {
     decimalAdded = 'false'
     functionValueLength += 1
 
+    if(outputBox.textContent != '' || problemDisplay.textContent != '' || expressionContainer.textContent != '' || problemDisplayValue.textContent != '') {
+        operate()
+        outputBox.textContent = sum
+    }
+
     
     if (subtractBtnClicked === 'true') {
         addBtn.style.backgroundColor = ''
@@ -793,6 +803,11 @@ function multiplication() {
     decimalAdded = 'false'
     functionValueLength += 1
 
+    if(outputBox.textContent != '' || problemDisplay.textContent != '' || expressionContainer.textContent != '' || problemDisplayValue.textContent != '') {
+        operate()
+        outputBox.textContent = sum
+    }
+
     if (multiplyBtnClicked === 'true') {
         addBtn.style.backgroundColor = ''
         subtractBtn.style.backgroundColor = ''
@@ -821,6 +836,11 @@ function division() {
     divideBtnClicked = 'true'
     decimalAdded = 'false'
     functionValueLength += 1
+
+    if(outputBox.textContent != '' || problemDisplay.textContent != '' || expressionContainer.textContent != '' || problemDisplayValue.textContent != '') {
+        operate()
+        outputBox.textContent = sum
+    }
 
     if (divideBtnClicked === 'true') {
         addBtn.style.backgroundColor = ''
@@ -854,7 +874,8 @@ divideBtn.addEventListener('click', division)
 
 
 
-equalsBtn.addEventListener('click', operate)
+equalsBtn.addEventListener('click', operate) 
+
 
 function operate() {
 
@@ -864,10 +885,6 @@ function operate() {
     multiplyBtn.style.backgroundColor = ''
     divideBtn.style.backgroundColor = ''
 
-    if (functionValueLength != 1) {
-        
-        
-    }
     
     if (functionValue === ' + ') {
         let strProb = expressionContainer.textContent
