@@ -735,7 +735,7 @@ function addition () {
     functionValueLength += 1
 
     if(outputBox.textContent != '' || problemDisplay.textContent != '' || expressionContainer.textContent != '' || problemDisplayValue.textContent != '') {
-        operate()
+        operateForFunctions()
         outputBox.textContent = sum
     }
 
@@ -770,7 +770,7 @@ function subtraction() {
     functionValueLength += 1
 
     if(outputBox.textContent != '' || problemDisplay.textContent != '' || expressionContainer.textContent != '' || problemDisplayValue.textContent != '') {
-        operate()
+        operateForFunctions()
         outputBox.textContent = sum
     }
 
@@ -804,7 +804,7 @@ function multiplication() {
     functionValueLength += 1
 
     if(outputBox.textContent != '' || problemDisplay.textContent != '' || expressionContainer.textContent != '' || problemDisplayValue.textContent != '') {
-        operate()
+        operateForFunctions()
         outputBox.textContent = sum
     }
 
@@ -838,7 +838,7 @@ function division() {
     functionValueLength += 1
 
     if(outputBox.textContent != '' || problemDisplay.textContent != '' || expressionContainer.textContent != '' || problemDisplayValue.textContent != '') {
-        operate()
+        operateForFunctions()
         outputBox.textContent = sum
     }
 
@@ -880,6 +880,82 @@ equalsBtn.addEventListener('click', operate)
 function operate() {
 
     problemDisplay.textContent = problemDisplayValue.textContent + ' ='
+    addBtn.style.backgroundColor = ''
+    subtractBtn.style.backgroundColor = ''
+    multiplyBtn.style.backgroundColor = ''
+    divideBtn.style.backgroundColor = ''
+
+    
+    if (functionValue === ' + ') {
+        let strProb = expressionContainer.textContent
+        let splitProb = strProb.split(' + ')
+        sum = 0
+        let numberz = splitProb.map((num => Number(num)))
+        sum = numberz.reduce((accumulator, currentValue) => accumulator + currentValue)
+        outputBox.textContent = sum
+        expressionContainer.textContent = 'sum'
+            if (cBtnClicked === 'false') {
+                expressionContainer.textContent = sum
+                outputBox.textContent = sum
+                problemDisplayValue.textContent = sum
+            } 
+            if (sum % 1 !== 0) {
+                sum = sum.toFixed(1)
+            }
+    } else if (functionValue === ' - ') {
+    let strProb = expressionContainer.textContent
+    let splitProb = strProb.split('-')
+    sum = 0
+    let numberz = splitProb.map((num => Number(num)))
+    sum = numberz.reduce((accumulator, currentValue) => accumulator - currentValue)
+    outputBox.textContent = sum
+    expressionContainer.textContent = sum
+        if (cBtnClicked === 'false') {
+            expressionContainer.textContent = sum
+            outputBox.textContent = sum
+            problemDisplayValue.textContent = sum
+        } 
+        if (sum % 1 !== 0) {
+            sum = sum.toFixed(1)
+        }
+    } else if (functionValue === ' × ') {
+    let strProb = expressionContainer.textContent
+    let splitProb = strProb.split('×')
+    sum = 0
+    let numberz = splitProb.map((num => Number(num)))
+    sum = numberz.reduce((accumulator, currentValue) => accumulator * currentValue)
+    outputBox.textContent = sum
+    expressionContainer.textContent = sum
+        if (cBtnClicked === 'false') {
+            expressionContainer.textContent = sum
+            outputBox.textContent = sum
+            problemDisplayValue.textContent = sum
+        } 
+        if (sum % 1 !== 0) {
+            sum = sum.toFixed(1)
+        }
+    } else if (functionValue === ' ÷ ') {
+    let strProb = expressionContainer.textContent
+    let splitProb = strProb.split('÷')
+    sum = 0
+    let numberz = splitProb.map((num => Number(num)))
+    sum = numberz.reduce((accumulator, currentValue) => accumulator / currentValue)
+    if (sum % 1 !== 0) {
+        sum = sum.toFixed(1)
+    }
+    outputBox.textContent = sum
+    expressionContainer.textContent = sum
+        if (cBtnClicked === 'false') {
+            expressionContainer.textContent = sum
+            outputBox.textContent = sum
+            problemDisplayValue.textContent = sum
+        } 
+        
+    }
+}
+
+function operateForFunctions() {
+
     addBtn.style.backgroundColor = ''
     subtractBtn.style.backgroundColor = ''
     multiplyBtn.style.backgroundColor = ''
