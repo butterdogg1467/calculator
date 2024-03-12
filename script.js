@@ -41,6 +41,8 @@ let decimalAdded = 'false'
 let coolDisplay; 
 let functionValueLength = 0
 let isNegative = 'false'
+let sumCalculated = 'false'
+
 
 
 equalsBtn.addEventListener('dblclick', coolTheme)
@@ -65,11 +67,11 @@ function negative() {
             expressionContainer.textContent = revertedNum
         
     }
+
+    if (sum != 0 && sumCalculated === 'true'){
+        problemDisplay.textContent = outputBox.textContent
+    }
     
-    // if (outputBox.textContent != 0 && sum != 0) {
-    //     operateForFunctions()
-    //     problemDisplay.textContent = outputBox.textContent
-    // }
 
     
 }
@@ -110,7 +112,7 @@ function coolTheme(){
 }
 
 
-function addDecimal(){
+function addDecimal(){  
     if (outputBox.textContent != 0 && decimalAdded === 'false') {
         outputBox.textContent += '.'
         problemDisplayValue.textContent += '.'
@@ -132,7 +134,9 @@ generalButton.forEach(button => {
 
 outputBox.textContent = 0
 
-ceBtn.addEventListener('click', function () {
+ceBtn.addEventListener('click', CE)
+
+function CE() {
     let lastNumber = outputBox.textContent
     let pDLastNumber = problemDisplay.textContent
     let pDvLastNumber = problemDisplayValue.textContent
@@ -145,9 +149,10 @@ ceBtn.addEventListener('click', function () {
     problemDisplay.textContent = pDCleared
     problemDisplayValue.textContent = pDvCleared
     expressionContainer.textContent = eCCleared
-})
+}
 
 function clear() {
+    sumCalculated = 'false'
     isNegative = 'false'
     decimalAdded = 'false'
     outputBox.textContent = 0
@@ -764,6 +769,9 @@ if (event.key === 'c' || event.key === 'C') {
 if (event.keyCode === 13 && outputBox.textContent === '1986') {
     coolTheme();
 }
+
+if (event.keyCode === 8)
+    CE()
 })
 
 function addition () {
@@ -922,6 +930,8 @@ function operate() {
     subtractBtn.style.backgroundColor = ''
     multiplyBtn.style.backgroundColor = ''
     divideBtn.style.backgroundColor = ''
+    sumCalculated = 'true'
+
 
     
     if (functionValue === ' + ') {

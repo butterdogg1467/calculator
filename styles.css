@@ -48,6 +48,7 @@ body {
     border-left-width: 25px;
     border-right: darkgray solid;
     border-right-width: 25px;
+    
 }
 
 
@@ -98,8 +99,10 @@ body {
 
 .button {
     border-radius: 25px;
-    border: solid black;
+    border: solid gray;
     background-color: gray ;
+    color: rgb(78, 78, 78);
+
 }
 
 .button:hover {
