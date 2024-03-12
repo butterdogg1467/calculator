@@ -40,6 +40,7 @@ let divideBtnClicked;
 let decimalAdded = 'false'
 let coolDisplay; 
 let functionValueLength = 0
+let isNegative = 'false'
 
 
 equalsBtn.addEventListener('dblclick', coolTheme)
@@ -47,12 +48,30 @@ equalsBtn.addEventListener('dblclick', coolTheme)
 negativeBtn.addEventListener('click', negative)
 
 function negative() {
-    if (outputBox.textContent != 0) {
+    if (outputBox.textContent != 0 && isNegative === 'false') {
+        isNegative = 'true'
         outputBox.textContent = '-' + outputBox.textContent
         expressionContainer.textContent = '-' + expressionContainer.textContent
         problemDisplayValue.textContent = '-' + problemDisplayValue.textContent
         problemDisplay.textContent = '-' + problemDisplay.textContent
     }
+    else if (isNegative === 'true') {
+            isNegative = 'false'
+            let negativeNumber = outputBox.textContent
+            let revertedNum = negativeNumber.slice(1)
+            outputBox.textContent = revertedNum
+            problemDisplay.textContent = revertedNum
+            problemDisplayValue.textContent = revertedNum
+            expressionContainer.textContent = revertedNum
+        
+    }
+    
+    // if (outputBox.textContent != 0 && sum != 0) {
+    //     operateForFunctions()
+    //     problemDisplay.textContent = outputBox.textContent
+    // }
+
+    
 }
 
 
@@ -118,6 +137,7 @@ ceBtn.addEventListener('click', function () {
 })
 
 function clear() {
+    isNegative = 'false'
     decimalAdded = 'false'
     outputBox.textContent = 0
     outputBox.value = 0
@@ -160,11 +180,11 @@ function zero() {
         problemDisplayValue.textContent += 0
         problemDisplay.textContent += 0
     }
-    if (problemDisplay.textContent != '' && sum != '') {    
-        problemDisplay.textContent = 0
-        problemDisplayValue.textContent = 0
-        expressionContainer.textContent = 0
-        outputBox.textContent = 0
+    else if (problemDisplay.textContent != '' && sum != '') {    
+        outputBox.textContent += 0 
+        expressionContainer.textContent += 0
+        problemDisplayValue.textContent += 0
+        problemDisplay.textContent += 0
     }
     
 }
@@ -193,18 +213,6 @@ oneBtn.addEventListener('click', function () {
     if (functionValue === ' + ' && outputBox.textContent === '+') {
         outputBox.textContent = 1
     } 
-    if (num1 != 0 && functionValue === '') {
-        num1 += 1
-    } else if (num2 != 0 && functionValue != '') {
-        num2 += 1
-    }
-
-    if (problemDisplay.textContent != '' && sum != '') {    
-        problemDisplay.textContent = 1
-        problemDisplayValue.textContent = 1
-        expressionContainer.textContent = 1
-        outputBox.textContent = 1
-    }
     
 }) 
 
@@ -511,7 +519,7 @@ document.addEventListener('keydown', function () {
         problemDisplay.textContent += 0
     }
     if (event.key === '1') {
-        addBtn.style.backgroundColor = ''
+    addBtn.style.backgroundColor = ''
     subtractBtn.style.backgroundColor = ''
     multiplyBtn.style.backgroundColor = ''
     divideBtn.style.backgroundColor = ''
