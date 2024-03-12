@@ -47,7 +47,9 @@ let sumCalculated = 'false'
 
 equalsBtn.addEventListener('dblclick', coolTheme)
 
-negativeBtn.addEventListener('click', negative)
+negativeBtn.addEventListener('click', function (){
+    alert('This function is still being worked on')
+})
 
 function negative() {
     if (outputBox.textContent != 0 && isNegative === 'false') {
@@ -72,6 +74,17 @@ function negative() {
         problemDisplay.textContent = outputBox.textContent
     }
     
+    if (functionValue === ' + ' || functionValue === ' - ' || functionValue === ' × ' || functionValue === ' ÷ ' ) {
+        let currentNumber = outputBox.textContent;
+        if (currentNumber !== '' && sum === '') {
+            let numericCurrentNumber = parseFloat(currentNumber);
+            outputBox.textContent = numericCurrentNumber;
+            expressionContainer.textContent = expressionContainer.textContent.slice(0, -1) + numericCurrentNumber;
+            problemDisplayValue.textContent = problemDisplayValue.textContent.slice(0, -1) + numericCurrentNumber;
+            problemDisplay.textContent = problemDisplay.textContent.slice(0, -1) + outputBox.textContent;
+        }
+    }
+    
 
     
 }
@@ -79,7 +92,7 @@ function negative() {
 
 function coolTheme(){
     if (outputBox.textContent === '1986') {
-    coolDisplay === 'on'
+    coolDisplay = 'on'
     addBtn.classList.add('coolbutton')
     subtractBtn.classList.add('coolbutton')
     multiplyBtn.classList.add('coolbutton')
@@ -792,6 +805,8 @@ function addition () {
         divideBtn.style.backgroundColor = ''
         addBtn.style.backgroundColor = 'lightgray'
     }
+
+
     if (expressionContainer.textContent != 0) {
         functionValue = ' + '
         expressionContainer.textContent += functionValue
