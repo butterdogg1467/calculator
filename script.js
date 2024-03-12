@@ -133,7 +133,18 @@ generalButton.forEach(button => {
 outputBox.textContent = 0
 
 ceBtn.addEventListener('click', function () {
-    
+    let lastNumber = outputBox.textContent
+    let pDLastNumber = problemDisplay.textContent
+    let pDvLastNumber = problemDisplayValue.textContent
+    let eCLastNumber = expressionContainer.textContent
+    let cleared = lastNumber.slice(0, -1)
+    let pDCleared = pDLastNumber.slice(0, -1)
+    let pDvCleared = pDvLastNumber.slice(0, -1)
+    let eCCleared = eCLastNumber.slice(0, -1)
+    outputBox.textContent = cleared
+    problemDisplay.textContent = pDCleared
+    problemDisplayValue.textContent = pDvCleared
+    expressionContainer.textContent = eCCleared
 })
 
 function clear() {
